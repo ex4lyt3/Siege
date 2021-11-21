@@ -1,5 +1,5 @@
 # Siege!
-https://github.com/ex4lyt3/Siege/blob/main/Untitled(190).png
+https://github.com/ex4lyt3/Siege/blob/main/Untitled(190).png?raw=true
 
 - A Unity Development Project
 
