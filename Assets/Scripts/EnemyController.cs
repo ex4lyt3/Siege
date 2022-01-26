@@ -65,6 +65,7 @@ public class EnemyController : MonoBehaviour
     public void DealDamage(float arg)
     {
         float healthRemaining = float.Parse(HP.text) - arg;
+        healthRemaining = Mathf.Floor(healthRemaining);
         HP.text = healthRemaining.ToString();
 
         if (healthRemaining <= 0)

@@ -5,7 +5,8 @@ using UnityEngine;
 public class MouseLock : MonoBehaviour
 {
 
-    public float mouseSensitivity = 300f;
+    public float mouseSensitivity = 100f;
+    float defaultSensitivity = 100f;
 
     public Transform playerBody;
     public Transform viewBody;
@@ -31,5 +32,10 @@ public class MouseLock : MonoBehaviour
         viewBody.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
 
+    }
+
+    public void ChangeSensitivity(float defaultMultiplier)
+    {
+        mouseSensitivity = defaultSensitivity * defaultMultiplier;
     }
 }

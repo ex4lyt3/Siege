@@ -34,7 +34,7 @@ public class ToolController : MonoBehaviour
             playerAnimator.SetInteger("GunState", gunState);
             swordState = 0; //resets state 
                       
-            WeaponUI.ChangeWeapon("Pistol ||");
+            WeaponUI.ChangeWeapon("PISTOL");
             AmnoUI.ChangeAmno(amno.ToString());
 
         }
@@ -47,7 +47,7 @@ public class ToolController : MonoBehaviour
             playerAnimator.SetInteger("SwordState", swordState);
             gunState = 0;
 
-            WeaponUI.ChangeWeapon("Sword ||");
+            WeaponUI.ChangeWeapon("SWORD");
             AmnoUI.ChangeAmno("");
         }
         else if (Input.GetKey(KeyCode.Alpha3) && weaponState != 0)
@@ -56,7 +56,7 @@ public class ToolController : MonoBehaviour
             playerAnimator.SetInteger("WeaponState", weaponState); //plays
             gunState = 0;
             swordState = 0;
-            WeaponUI.ChangeWeapon("None ||");
+            WeaponUI.ChangeWeapon("NONE");
             AmnoUI.ChangeAmno("");
         }
 
@@ -91,7 +91,7 @@ public class ToolController : MonoBehaviour
     { 
         gunState = 1;
         playerAnimator.SetInteger("GunState", gunState);
-        WeaponUI.ChangeWeapon("Pistol ||");
+        WeaponUI.ChangeWeapon("PISTOL");
         AmnoUI.ChangeAmno(amno.ToString());
         gunReady = true;
     }
@@ -123,7 +123,7 @@ public class ToolController : MonoBehaviour
         gunReady = false;
         gunState = 3;
         playerAnimator.SetInteger("GunState", gunState);
-        WeaponUI.ChangeWeapon("Reloading");
+        WeaponUI.ChangeWeapon("RELOADING");
 
         Invoke("GunIdle", 2f);
         amno = 8;
