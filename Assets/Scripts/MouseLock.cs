@@ -16,7 +16,7 @@ public class MouseLock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
@@ -37,5 +37,6 @@ public class MouseLock : MonoBehaviour
     public void ChangeSensitivity(float defaultMultiplier)
     {
         mouseSensitivity = defaultSensitivity * defaultMultiplier;
+        Debug.Log(mouseSensitivity);
     }
 }
