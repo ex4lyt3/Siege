@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController controller;
+    public GameObject Camera;
 
     public float speed = 8f;
     public float gravity = -19.62f;
@@ -39,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
+        Debug.Log(z);
+
 
         controller.Move(move * speed * Time.deltaTime);
 

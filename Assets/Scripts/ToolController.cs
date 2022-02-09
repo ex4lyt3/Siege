@@ -21,6 +21,7 @@ public class ToolController : MonoBehaviour
     int amno = 8;
 
     bool gunReady = true;
+    bool swordReady = true;
 
     // Update is called once per frame
     void Update()
@@ -125,33 +126,38 @@ public class ToolController : MonoBehaviour
         playerAnimator.SetInteger("GunState", gunState);
         WeaponUI.ChangeWeapon("RELOADING");
 
-        Invoke("GunIdle", 2f);
+        Invoke("GunIdle", 1f);
         amno = 8;
     }
 
     void Slash()
     {
-         swordState = 2;
-         playerAnimator.SetInteger("SwordState", swordState);
+        if (swordReady == true){
+            swordReady = false;
+            Debug.Log("Slash");
+            swordState = 2;
+            playerAnimator.SetInteger("SwordState", swordState);
 
 
-        RaycastHit[] hit = Physics.SphereCastAll(transform.position, 5, transform.forward);
+            RaycastHit[] hit = Physics.SphereCastAll(transform.position, 2, transform.forward);
 
-        for (int i = 0; i < hit.Length; i++)
-        {
-            if (hit[i].transform.tag == "Enemy")
+            for (int i = 0; i < hit.Length; i++)
             {
-                TakeDamage target = hit[i].transform.GetComponent<TakeDamage>();
-                target.Damage(meleeDamage);
-                Debug.Log("Enemy Hit!");
+                if (hit[i].transform.tag == "Enemy")
+                {
+                    TakeDamage target = hit[i].transform.GetComponent<TakeDamage>();
+                    target.Damage(meleeDamage);
+                }
             }
-        }
 
-            Invoke("ResetCombo", 0.5f);     
+                Invoke("ResetCombo", 1f);    
+
+        } 
     }
 
     void ResetCombo()
-    { 
+    {       
+            swordReady = true;
             swordState = 1;
             playerAnimator.SetInteger("SwordState", swordState);
     }

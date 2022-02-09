@@ -9,8 +9,8 @@ public class EnemyController : MonoBehaviour
     public GameManager GameManager;
 
     public float lookRadius = 10f;
-    public float damageRange = 5f;
-    public float damage = 3f;
+    public float damageRange = 3f;
+    public float damage = 1f;
     public GameObject HPObject;
     public Text HP;
 
