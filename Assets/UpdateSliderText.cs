@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UpdateSliderText : MonoBehaviour
 {
+    public GameObject Slider;
+    
     // Start is called before the first frame update
     void Start()
     {
